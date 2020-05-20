@@ -20,22 +20,24 @@
             <version>5.6.2</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.github.spotbugs</groupId>
-            <artifactId>spotbugs</artifactId>
-            <version>4.0.3</version>
-        </dependency>
     </dependencies>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
-                <artifactId>spotbugs</artifactId>
-                <version>4.0.3</version>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>4.0.0</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.github.spotbugs</groupId>
+                        <artifactId>spotbugs</artifactId>
+                        <version>4.0.3</version>
+                    </dependency>
+                </dependencies>
                 <executions>
                     <execution>
-                        <id>check</id>
+                        <id>verify</id>
                         <phase>verify</phase>
                         <goals>
                             <goal>check</goal>
